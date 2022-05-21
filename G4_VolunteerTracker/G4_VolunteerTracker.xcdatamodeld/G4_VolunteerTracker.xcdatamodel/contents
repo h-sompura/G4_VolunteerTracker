@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Event" representedClassName="Event" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="end_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO">
+            <userInfo>
+                <entry key="id" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="info" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="start_time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="events" inverseEntity="Location"/>
+        <relationship name="organization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="events" inverseEntity="Organization"/>
+        <relationship name="volunteer_detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Volunteer" inverseName="event" inverseEntity="Volunteer"/>
+        <relationship name="volunteers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="volunteering" inverseEntity="User"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO">
+            <userInfo>
+                <entry key="id" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="location" inverseEntity="Event"/>
+    </entity>
+    <entity name="Organization" representedClassName="Organization" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO">
+            <userInfo>
+                <entry key="id" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="organization" inverseEntity="Event"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <relationship name="volunteering" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="volunteers" inverseEntity="Event"/>
+        <relationship name="volunteering_detail" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Volunteer" inverseName="user" inverseEntity="Volunteer"/>
+        <userInfo>
+            <entry key="email" value="value"/>
+        </userInfo>
+    </entity>
+    <entity name="Volunteer" representedClassName="Volunteer" syncable="YES" codeGenerationType="class">
+        <attribute name="attend" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hours" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO">
+            <userInfo>
+                <entry key="id" value="value"/>
+            </userInfo>
+        </attribute>
+        <attribute name="picture" optional="YES" attributeType="Transformable"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="volunteer_detail" inverseEntity="Event"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="volunteering_detail" inverseEntity="User"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Event" positionX="-63" positionY="9" width="128" height="179"/>
+        <element name="Organization" positionX="-54" positionY="63" width="128" height="74"/>
+        <element name="Location" positionX="-36" positionY="72" width="128" height="89"/>
+        <element name="Volunteer" positionX="-18" positionY="99" width="128" height="119"/>
     </elements>
 </model>
