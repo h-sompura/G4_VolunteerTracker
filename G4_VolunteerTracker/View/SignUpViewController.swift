@@ -81,14 +81,42 @@ class SignUpViewController: UIViewController {
         }
         
         //if we reached this point, user has entered all the data required for signup
-        //so, we create a user in the coredata
-        self.dbHelper.createUser(name: nameFromUI, email: emailFromUI, password: passwordFromUI)
-        
-        //lastly we can clear all the fields
-        txtNameField.text = ""
-        txtEmailField.text = ""
-        txtPasswordField.text = ""
-        lblError.text = ""
+        //Searching if user already exists in coredata
+        let searchUserInCoreData = self.dbHelper.searchUser(email: emailFromUI)
+        if(searchUserInCoreData == nil){
+            //user doesn't exist in our coredata
+            //so, we create a user in the coredata
+            self.dbHelper.createUser(name: nameFromUI, email: emailFromUI, password: passwordFromUI)
+            
+            //lastly we can clear all the fields
+            txtNameField.text = ""
+            txtEmailField.text = ""
+            txtPasswordField.text = ""
+            lblError.text = "Successfully created a user, logging in!"
+            lblError.textColor = UIColor.green
+            
+            //go to login screen after signup is successful
+            //navigate to login screen
+            guard let nextScreen = storyboard?.instantiateViewController(identifier: "loginScreen")
+            else {
+              print("Cannot find next screen")
+              return
+            }
+            // - navigate to the next screen
+            nextScreen.modalPresentationStyle = .fullScreen  //changing to full screen here
+            self.present(nextScreen, animated: true, completion: nil)
+            
+        } else {
+            //user exists so we can't sign them up
+            print(#function,"user already exists")
+            // ask them to log in
+            txtNameField.text = ""
+            txtEmailField.text = ""
+            txtPasswordField.text = ""
+            lblError.text = "This email already exists, log in!"
+            lblError.textColor = UIColor.red
+        }   
+      
     }
     
 }
