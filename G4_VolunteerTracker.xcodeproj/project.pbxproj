@@ -16,6 +16,9 @@
 		E3AA5989283919C500923B3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AA5987283919C500923B3A /* LaunchScreen.storyboard */; };
 		E3AA599428391AA800923B3A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA599328391AA800923B3A /* SignUpViewController.swift */; };
 		E3AA5996283937FC00923B3A /* CoreDbHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5995283937FC00923B3A /* CoreDbHelper.swift */; };
+		E3AA599A283968DD00923B3A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5999283968DD00923B3A /* HistoryViewController.swift */; };
+		E3AA599C28396A2300923B3A /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA599B28396A2300923B3A /* NewsfeedViewController.swift */; };
+		E3AA599E28396A6300923B3A /* RecordEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA599D28396A6300923B3A /* RecordEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E3AA598A283919C500923B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3AA599328391AA800923B3A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E3AA5995283937FC00923B3A /* CoreDbHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDbHelper.swift; sourceTree = "<group>"; };
+		E3AA5999283968DD00923B3A /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		E3AA599B28396A2300923B3A /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
+		E3AA599D28396A6300923B3A /* RecordEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 			children = (
 				E3AA597D283919C400923B3A /* LoginViewController.swift */,
 				E3AA599328391AA800923B3A /* SignUpViewController.swift */,
+				E3AA5999283968DD00923B3A /* HistoryViewController.swift */,
+				E3AA599B28396A2300923B3A /* NewsfeedViewController.swift */,
+				E3AA599D28396A6300923B3A /* RecordEventViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,7 +185,10 @@
 				E3AA5996283937FC00923B3A /* CoreDbHelper.swift in Sources */,
 				E3AA597A283919C400923B3A /* AppDelegate.swift in Sources */,
 				E3AA597C283919C400923B3A /* SceneDelegate.swift in Sources */,
+				E3AA599E28396A6300923B3A /* RecordEventViewController.swift in Sources */,
+				E3AA599A283968DD00923B3A /* HistoryViewController.swift in Sources */,
 				E3AA599428391AA800923B3A /* SignUpViewController.swift in Sources */,
+				E3AA599C28396A2300923B3A /* NewsfeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

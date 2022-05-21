@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     private let dbHelper = CoreDbHelper.getInstance()
     
     //MARK: User Defaults
+    var defaults: UserDefaults = UserDefaults.standard
     
     //MARK: Variables
     
@@ -92,6 +93,22 @@ class LoginViewController: UIViewController {
                 //go to next screen
                 lblError.text = "Successfully logged in!"
                 lblError.textColor = UIColor.green
+                
+                //get remember me switch value
+                let isRememberSaved = rememberMeSwitch.isOn
+                self.defaults.set(isRememberSaved, forKey: "KEY_REMEMBER_USER")
+                
+                //move to next screen
+                guard let nextScreen = storyboard?.instantiateViewController(identifier: "tabController")
+                else {
+                  print("Cannot find next screen")
+                  return
+                }
+                
+                // - navigate to the next screen
+                nextScreen.modalPresentationStyle = .fullScreen  //changing tab controller to full screen here
+                self.present(nextScreen, animated: true, completion: nil)
+                
             } else {
                 //password did not match
                 // i.e. incorrect password
@@ -107,6 +124,26 @@ class LoginViewController: UIViewController {
         // lastly we clear all the fields
         txtEmailField.text = ""
         txtPasswordField.text = ""
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+      print(#function, "Login Screen loaded!")
+      //check user login
+      let isUserSavedFromUserDefaults: Bool = self.defaults.bool(forKey: "KEY_REMEMBER_USER")
+      print("Is user remebered? \(isUserSavedFromUserDefaults)")
+      if isUserSavedFromUserDefaults {
+        //move onto next screen
+        // - try to get a reference to the next screen
+        guard let nextScreen = storyboard?.instantiateViewController(identifier: "tabController")
+        else {
+          print("Cannot find next screen")
+          return
+        }
+        // - navigate to the next screen
+        nextScreen.modalPresentationStyle = .fullScreen  //changing tab controller to full screen here
+
+        present(nextScreen, animated: true, completion: nil)
+      }
     }
     
 }
