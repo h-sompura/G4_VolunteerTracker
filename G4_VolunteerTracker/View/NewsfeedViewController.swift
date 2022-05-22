@@ -54,7 +54,13 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        let alertBox = UIAlertController(title: eventList[indexPath.row].name, message: eventList[indexPath.row].info, preferredStyle: .alert)
+        alertBox.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertBox.addAction(UIAlertAction(title: "Register", style: .default, handler: {
+            action in
+            // add a new record for Volunteer entity
+        }))
+        self.present(alertBox, animated: true)
     }
     
     /*
