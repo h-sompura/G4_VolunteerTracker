@@ -7,18 +7,23 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //get the coreDb singleton
     private let dbHelper = CoreDbHelper.getInstance()
+    private var volunteerList : [Volunteer] = [Volunteer]()
     
     //MARK: User Defaults
     var defaults: UserDefaults = UserDefaults.standard
+    
+    @IBOutlet weak var historyTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        historyTable.delegate = self
+        historyTable.dataSource = self
         
         //Add signout to nav bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(
@@ -41,6 +46,30 @@ class HistoryViewController: UIViewController {
       self.present(nextScreen, animated: true, completion: nil)
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return volunteerList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = historyTable.dequeueReusableCell(withIdentifier: "volunteerCell", for: indexPath) as! HistoryTableViewCell
+        
+        let event = volunteerList[indexPath.row]
+        cell.lblName.text = event.event?.name
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        cell.lblDate.text = dateFormatter.string(from: (event.event?.date)!)
+        
+        cell.lblHours.text = "\(event.hours)"
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
     /*
     // MARK: - Navigation
 
