@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5EEDE43283A9C8A004E7AD7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */; };
 		E3AA597A283919C400923B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5979283919C400923B3A /* AppDelegate.swift */; };
 		E3AA597C283919C400923B3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA597B283919C400923B3A /* SceneDelegate.swift */; };
 		E3AA597E283919C400923B3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA597D283919C400923B3A /* LoginViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		E3AA5976283919C400923B3A /* G4_VolunteerTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G4_VolunteerTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5979283919C400923B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA597B283919C400923B3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				E3AA5999283968DD00923B3A /* HistoryViewController.swift */,
 				E3AA599B28396A2300923B3A /* NewsfeedViewController.swift */,
 				E3AA599D28396A6300923B3A /* RecordEventViewController.swift */,
+				A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				E3AA599E28396A6300923B3A /* RecordEventViewController.swift in Sources */,
 				E3AA599A283968DD00923B3A /* HistoryViewController.swift in Sources */,
 				E3AA599428391AA800923B3A /* SignUpViewController.swift in Sources */,
+				A5EEDE43283A9C8A004E7AD7 /* EventTableViewCell.swift in Sources */,
 				E3AA599C28396A2300923B3A /* NewsfeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,25 +7,56 @@
 
 import UIKit
 
-class NewsfeedViewController: UIViewController {
+class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //get the coreDb singleton
     private let dbHelper = CoreDbHelper.getInstance()
+    private var eventList : [Event] = [Event]()
     
     //MARK: User Defaults
     var defaults: UserDefaults = UserDefaults.standard
+    
+    @IBOutlet weak var eventsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        eventsTable.delegate = self
+        eventsTable.dataSource = self
         
         //Add signout to nav bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(
           title: "Sign Out", style: .plain, target: self, action: #selector(signOutPressed))
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = eventsTable.dequeueReusableCell(withIdentifier: "newEventCell", for: indexPath) as! EventTableViewCell
+        
+        let event = eventList[indexPath.row]
+        cell.lblName.text = event.name
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        cell.lblDate.text = dateFormatter.string(from: event.date!)
+        
+        dateFormatter.timeStyle = .short
+        cell.lblTime.text = dateFormatter.string(from: event.start_time!)
+        
+        cell.lblLocation.text = event.location
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
     /*
     // MARK: - Navigation
 
