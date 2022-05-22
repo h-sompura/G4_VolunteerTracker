@@ -54,13 +54,12 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertBox = UIAlertController(title: eventList[indexPath.row].name, message: eventList[indexPath.row].info, preferredStyle: .alert)
-        alertBox.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alertBox.addAction(UIAlertAction(title: "Register", style: .default, handler: {
-            action in
-            // add a new record for Volunteer entity
-        }))
-        self.present(alertBox, animated: true)
+        guard let registerView = storyboard?.instantiateViewController(identifier: "registerView") as? RegisterViewController else {
+            print("Cannot find next screen")
+            return
+        }
+        
+        self.navigationController?.pushViewController(registerView, animated: true)
     }
     
     /*

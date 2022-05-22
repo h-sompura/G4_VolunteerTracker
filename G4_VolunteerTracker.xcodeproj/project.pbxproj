@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5EEDE43283A9C8A004E7AD7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */; };
+		A5EEDE47283AB5D5004E7AD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */; };
 		E3AA597A283919C400923B3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA5979283919C400923B3A /* AppDelegate.swift */; };
 		E3AA597C283919C400923B3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA597B283919C400923B3A /* SceneDelegate.swift */; };
 		E3AA597E283919C400923B3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AA597D283919C400923B3A /* LoginViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E3AA5976283919C400923B3A /* G4_VolunteerTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = G4_VolunteerTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AA5979283919C400923B3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AA597B283919C400923B3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				E3AA599B28396A2300923B3A /* NewsfeedViewController.swift */,
 				E3AA599D28396A6300923B3A /* RecordEventViewController.swift */,
 				A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */,
+				A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AA5984283919C400923B3A /* G4_VolunteerTracker.xcdatamodeld in Sources */,
+				A5EEDE47283AB5D5004E7AD7 /* RegisterViewController.swift in Sources */,
 				E3AA597E283919C400923B3A /* LoginViewController.swift in Sources */,
 				E3AA5996283937FC00923B3A /* CoreDbHelper.swift in Sources */,
 				E3AA597A283919C400923B3A /* AppDelegate.swift in Sources */,
