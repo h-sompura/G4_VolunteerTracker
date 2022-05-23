@@ -78,10 +78,12 @@ class CoreDbHelper{
         }
     }
     
-    func createVolunteer() {
+    func createVolunteer(user: User, event: Event) {
         do {
             let volunteerToCreate = NSEntityDescription.insertNewObject(forEntityName: VOLUNTEER_ENTITY_NAME, into: self.moc) as! Volunteer
             
+            volunteerToCreate.user = user
+            volunteerToCreate.event = event
             volunteerToCreate.attend = false
             volunteerToCreate.hours = 0.0
             volunteerToCreate.location = nil
@@ -121,6 +123,22 @@ class CoreDbHelper{
             return result as [Event]
         } catch let error as NSError {
             print(#function, "Could not fetch the data \(error)")
+        }
+        return nil
+    }
+    
+    func getAllRelatedVolunteers(user: User) -> [Volunteer]? {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: VOLUNTEER_ENTITY_NAME)
+        let predicateID = NSPredicate(format: "user == %@", user as CVarArg)
+        fetchRequest.predicate = predicateID
+        do {
+            let result = try self.moc.fetch(fetchRequest)
+            if (result.count > 0) {
+                print(#function, "Matching objects found")
+                return result as? [Volunteer]
+            }
+        } catch let error as NSError {
+            print(#function, "Unable to search for user \(error)")
         }
         return nil
     }

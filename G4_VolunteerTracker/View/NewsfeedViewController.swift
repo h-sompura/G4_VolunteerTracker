@@ -25,9 +25,21 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
         eventsTable.delegate = self
         eventsTable.dataSource = self
         
+        self.fetchAllEvents()
+        
         //Add signout to nav bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(
           title: "Sign Out", style: .plain, target: self, action: #selector(signOutPressed))
+    }
+    
+    private func fetchAllEvents(){
+        let data = self.dbHelper.getAllEvents()
+        if (data != nil) {
+            self.eventList = data!
+            self.eventsTable.reloadData()
+        }else{
+            print(#function, "No data received from DB")
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +71,7 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         
-        registerView.eventIndex = indexPath.row
+        registerView.event = eventList[indexPath.row]
         self.navigationController?.pushViewController(registerView, animated: true)
     }
     

@@ -25,6 +25,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         historyTable.delegate = self
         historyTable.dataSource = self
         
+//        self.fetchAllVolunteers()
+        
         //Add signout to nav bar
         navigationItem.rightBarButtonItem = UIBarButtonItem(
           title: "Sign Out", style: .plain, target: self, action: #selector(signOutPressed))
@@ -46,6 +48,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
       self.present(nextScreen, animated: true, completion: nil)
     }
 
+//    need to have user
+//    private func fetchAllVolunteers(){
+//        let data = self.dbHelper.getAllRelatedVolunteers(user: <#T##User#>)()
+//        if (data != nil) {
+//            self.volunteerList = data!
+//            self.historyTable.reloadData()
+//        }else{
+//            print(#function, "No data received from DB")
+//        }
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return volunteerList.count
     }
@@ -72,7 +85,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
             return
         }
         
-        volunteeredView.event = volunteerList[indexPath.row]
+        volunteeredView.volunteeredEvent = volunteerList[indexPath.row]
         self.navigationController?.pushViewController(volunteeredView, animated: true)
     }
     
