@@ -193,7 +193,8 @@ class CoreDbHelper{
                 
                 volunteerToUpdate.attend = true
                 volunteerToUpdate.hours = updatedVolunteer.hours
-                volunteerToUpdate.location = updatedVolunteer.location
+                volunteerToUpdate.latitude = updatedVolunteer.latitude
+                volunteerToUpdate.longitude = updatedVolunteer.longitude
                 volunteerToUpdate.picture = updatedVolunteer.picture
                 
                 try self.moc.save()
