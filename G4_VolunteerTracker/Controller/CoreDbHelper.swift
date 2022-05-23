@@ -86,7 +86,8 @@ class CoreDbHelper{
             volunteerToCreate.event = event
             volunteerToCreate.attend = false
             volunteerToCreate.hours = 0.0
-            volunteerToCreate.location = nil
+            volunteerToCreate.latitude = 0.0
+            volunteerToCreate.longitude = 0.0
             volunteerToCreate.picture = nil
             volunteerToCreate.id = UUID()
             

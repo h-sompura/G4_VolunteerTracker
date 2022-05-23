@@ -37,7 +37,8 @@
                 <entry key="id" value="value"/>
             </userInfo>
         </attribute>
-        <attribute name="location" optional="YES" attributeType="Transformable"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="picture" optional="YES" attributeType="Transformable"/>
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="volunteer_detail" inverseEntity="Event"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="volunteering_detail" inverseEntity="User"/>
@@ -48,6 +49,6 @@
     <elements>
         <element name="Event" positionX="-63" positionY="9" width="128" height="179"/>
         <element name="User" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="Volunteer" positionX="-18" positionY="99" width="128" height="134"/>
+        <element name="Volunteer" positionX="-18" positionY="99" width="128" height="149"/>
     </elements>
 </model>

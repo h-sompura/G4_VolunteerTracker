@@ -47,26 +47,26 @@ class VolunteeredViewController: UIViewController {
         dateFormatter.timeStyle = .short
         lblFinishTime.text = dateFormatter.string(from: (volunteeredEvent.event?.end_time)!)
         
-//        let geocoder = CLGeocoder()
-//        let locationToFind = CLLocation(latitude: volunteeredEvent.location.latitude, longitude: volunteeredEvent.location.longitude)
-//        geocoder.reverseGeocodeLocation(locationToFind) {
-//            (resultsList, error) in
-//            if let err = error {
-//                print("Error during the reverse geocoding")
-//                return
-//            } else {
-//                print("Matching location found: \(resultsList!.count)")
-//                let locationResult:CLPlacemark = resultsList!.first!
-//                print(locationResult)
-//
-//                print("Getting location data:")
-//                let name = locationResult.name ?? "NA"
-//                let street = locationResult.thoroughfare ?? "NA"
-//                let city = locationResult.locality ?? "NA"
-//
-//                lblVolunteerLocation.text = name + ", " + street + ", " + city + ", "
-//            }
-//        }
+        let geocoder = CLGeocoder()
+        let locationToFind = CLLocation(latitude: volunteeredEvent.latitude, longitude: volunteeredEvent.longitude)
+        geocoder.reverseGeocodeLocation(locationToFind) {
+            (resultsList, error) in
+            if let err = error {
+                print("Error during the reverse geocoding")
+                return
+            } else {
+                print("Matching location found: \(resultsList!.count)")
+                let locationResult:CLPlacemark = resultsList!.first!
+                print(locationResult)
+
+                print("Getting location data:")
+                let name = locationResult.name ?? "NA"
+                let street = locationResult.thoroughfare ?? "NA"
+                let city = locationResult.locality ?? "NA"
+
+                self.lblVolunteerLocation.text = name + ", " + street + ", " + city + ", "
+            }
+        }
                         
 
         lblVolunteerHours.text = ("\(volunteeredEvent.hours)")
