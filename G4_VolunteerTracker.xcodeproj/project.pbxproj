@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5028CBD283BF3F600DCF387 /* VolunteeredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5028CBC283BF3F600DCF387 /* VolunteeredViewController.swift */; };
 		A5EEDE43283A9C8A004E7AD7 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */; };
 		A5EEDE47283AB5D5004E7AD7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */; };
 		A5EEDE49283AC022004E7AD7 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EEDE48283AC022004E7AD7 /* HistoryTableViewCell.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5028CBC283BF3F600DCF387 /* VolunteeredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteeredViewController.swift; sourceTree = "<group>"; };
 		A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A5EEDE48283AC022004E7AD7 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A5EEDE42283A9C8A004E7AD7 /* EventTableViewCell.swift */,
 				A5EEDE46283AB5D5004E7AD7 /* RegisterViewController.swift */,
 				A5EEDE48283AC022004E7AD7 /* HistoryTableViewCell.swift */,
+				A5028CBC283BF3F600DCF387 /* VolunteeredViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				E3AA5984283919C400923B3A /* G4_VolunteerTracker.xcdatamodeld in Sources */,
 				A5EEDE47283AB5D5004E7AD7 /* RegisterViewController.swift in Sources */,
 				E3AA597E283919C400923B3A /* LoginViewController.swift in Sources */,
+				A5028CBD283BF3F600DCF387 /* VolunteeredViewController.swift in Sources */,
 				E3AA5996283937FC00923B3A /* CoreDbHelper.swift in Sources */,
 				E3AA597A283919C400923B3A /* AppDelegate.swift in Sources */,
 				E3AA597C283919C400923B3A /* SceneDelegate.swift in Sources */,

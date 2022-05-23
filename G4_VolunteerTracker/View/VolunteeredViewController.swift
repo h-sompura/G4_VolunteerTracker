@@ -1,14 +1,14 @@
 //
-//  RegisterViewController.swift
+//  VolunteeredViewController.swift
 //  G4_VolunteerTracker
 //
-//  Created by Sadaf Asadollahi on 2022-05-22.
+//  Created by Sadaf Asadollahi on 2022-05-23.
 //
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-    
+class VolunteeredViewController: UIViewController {
+
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var lblOrganization: UILabel!
@@ -16,6 +16,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblStartTime: UILabel!
     @IBOutlet weak var lblFinishTime: UILabel!
+    @IBOutlet weak var lblVolunteerLocation: UILabel!
+    @IBOutlet weak var lblVolunteerHours: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     var eventIndex = 0
     
@@ -23,15 +26,9 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        loadLbls()
     }
     
-    @IBAction func registerBtnPressed(_ sender: Any) {
-    }
 
-    private func loadLbls() {
-    }
-    
     /*
     // MARK: - Navigation
 

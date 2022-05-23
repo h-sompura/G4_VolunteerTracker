@@ -59,7 +59,7 @@ class NewsfeedViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         
-        registerView.activityIndex = indexPath.row
+        registerView.eventIndex = indexPath.row
         self.navigationController?.pushViewController(registerView, animated: true)
     }
     
