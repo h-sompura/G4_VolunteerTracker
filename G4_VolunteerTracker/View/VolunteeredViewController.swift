@@ -20,12 +20,35 @@ class VolunteeredViewController: UIViewController {
     @IBOutlet weak var lblVolunteerHours: UILabel!
     @IBOutlet weak var img: UIImageView!
     
-    var eventIndex = 0
+    var event: Volunteer = Volunteer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loadLables()
+    }
+    
+    func loadLables() {
+        lblName.text = event.event?.name
+        lblInfo.text = event.event?.info
+        lblOrganization.text = event.event?.organization
+        lblLocation.text = event.event?.location
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        lblDate.text = dateFormatter.string(from: (event.event?.date)!)
+        
+        dateFormatter.timeStyle = .short
+        lblStartTime.text = dateFormatter.string(from: (event.event?.start_time)!)
+        
+        dateFormatter.timeStyle = .short
+        lblFinishTime.text = dateFormatter.string(from: (event.event?.end_time)!)
+        
+//        lblVolunteerLocation.text =
+        lblVolunteerHours.text = ("\(event.hours)")
+//        picture
     }
     
 

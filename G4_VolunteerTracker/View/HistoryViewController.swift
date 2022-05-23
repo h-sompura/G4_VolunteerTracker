@@ -67,7 +67,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        guard let volunteeredView = storyboard?.instantiateViewController(identifier: "volunteeredView") as? VolunteeredViewController else {
+            print("Cannot find next screen")
+            return
+        }
+        
+        volunteeredView.event = volunteerList[indexPath.row]
+        self.navigationController?.pushViewController(volunteeredView, animated: true)
     }
     
     /*
