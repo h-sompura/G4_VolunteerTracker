@@ -166,23 +166,6 @@ class CoreDbHelper{
         return nil
     }
     
-    func searchEvent(eventID: UUID) -> Event? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EVENT_ENTITY_NAME)
-        let predicateID = NSPredicate(format: "id == %@", eventID as CVarArg)
-        fetchRequest.predicate = predicateID
-        
-        do {
-            let result = try self.moc.fetch(fetchRequest)
-            if (result.count > 0) {
-                print(#function, "Matching object found")
-                return result.first as? Event
-            }
-        } catch let error as NSError {
-            print(#function, "Unable to search for event \(error)")
-        }
-        return nil
-    }
-    
     func searchVolunteer(volunteerID: UUID) -> Volunteer? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: VOLUNTEER_ENTITY_NAME)
         let predicateID = NSPredicate(format: "id == %@", volunteerID as CVarArg)
